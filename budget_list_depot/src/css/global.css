@@ -1,0 +1,9 @@
+.v-table__wrapper > table > thead > tr > th
+  {
+    font-size: 1.1rem;
+  }
+
+.v-table__wrapper > table > tbody > tr > td
+  {
+    font-size: 1.1rem;
+  }

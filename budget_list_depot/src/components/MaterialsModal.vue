@@ -6,7 +6,7 @@
   >
     <v-skeleton-loader type="card" v-if="loading" />
     <v-card v-else class="rounded-lg">
-      <v-toolbar color="cyan" dark>
+      <v-toolbar color="orange-lighten-1" dark>
         <v-toolbar-title>Select one of the following items: {{ description }}</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn icon @click="closeDialog">
@@ -43,7 +43,7 @@
         </template>
         <template v-slot:[`item.select`]="{ item }">
           <v-btn
-            color="cyan"
+            color="orange-lighten-1"
             @click="confirm(item)"
           >
             Select

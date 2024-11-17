@@ -4,7 +4,7 @@ services:
       context: ./budget_list_depot
       dockerfile: Dockerfile
     ports:
-      - "8080:80" # Expone la aplicación Vue en el puerto 8080
+      - "8080:80" #Expone el puerto 8080
     networks:
       - app-network
 
@@ -13,11 +13,11 @@ services:
       context: ./PlaywrightDepot
       dockerfile: Dockerfile
     ports:
-      - "3000:3000" # Expone la aplicación Node.js en el puerto 3000
+      - "3000:3000" # Expone el puerto 3000
     networks:
       - app-network
     environment:
-      DISPLAY: ":99" # Configura la variable de entorno para Xvfb
+      DISPLAY: ":99"
 
 networks:
   app-network:

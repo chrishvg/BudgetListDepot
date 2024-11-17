@@ -1,5 +1,5 @@
 <template>
-  <v-row style="height: 8vh" class="d-flex">
+  <v-row style="height: 6vh" class="d-flex">
     <v-col cols="12">
       <FileInputComponent @listMaterials="getListMaterials"/>
     </v-col>

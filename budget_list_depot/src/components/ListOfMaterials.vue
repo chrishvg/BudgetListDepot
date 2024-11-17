@@ -1,8 +1,8 @@
 <template>
   <v-card flat>
     <v-card-title class="d-flex">
-      <v-toolbar color="cyan" dark class="text-center">
-        <v-toolbar-title>Materials</v-toolbar-title>
+      <v-toolbar color="orange-lighten-1 rounded-lg" dark class="text-center" style="height: 4vh">
+        <v-toolbar-title class="text-h4">Materials</v-toolbar-title>
       </v-toolbar>
 
       <v-text-field
@@ -25,6 +25,7 @@
       :items-per-page="itemsPerPage"
       :group-by="groupBy"
       item-value="id"
+      class="elevation-1 rounded-xl"
     >
       <template v-slot:group-header="{ item, columns, toggleGroup, isGroupOpen }">
         <tr>
@@ -63,13 +64,17 @@
       <template v-slot:[`item.actions`]="{ item }">
         <v-icon
           class="me-2"
+          color="blue-lighten-2"
           @click="selectItem(item)"
+          v-b-tooltip.hover title="Select item"
         >
           mdi-pencil
         </v-icon>
         <v-icon
           class="me-2"
+          color="red-lighten-2"
           @click="deleteItem(item.id)"
+          v-b-tooltip.hover title="Delete item"
         >
           mdi-close	
         </v-icon>
@@ -77,7 +82,7 @@
       <template v-slot:[`body.append`]>
         <tr>
           <td colspan="8">
-            <v-chip>
+            <v-chip color="primary">
               <span class="text-h6">Total</span>
             </v-chip>
           </td>
@@ -184,4 +189,4 @@
       },
     },
   };
-  </script>
+</script>

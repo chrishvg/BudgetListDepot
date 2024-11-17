@@ -1,36 +1,38 @@
 <template>
   <v-card flat>
     <v-card-title>
-      <v-toolbar color="cyan" height="20px" class="text-center">
-        <v-toolbar-title>File Types: txt | csv | html | xml</v-toolbar-title>
-      </v-toolbar>
-    </v-card-title>
-  <v-card-text>
-    <v-file-input
-      @change="handleFileUpload"
-      color="cyan-darken-3"
-      counter
-      label="File input"
-      placeholder="Select your file"
-      prepend-icon="mdi-paperclip"
-      variant="outlined"
-      style="height: 6vh"
-      accept=".csv"
-      >
-      <template v-slot:selection="{ fileNames }">
-          <template v-for="(fileName) in fileNames" :key="fileName">
-          <v-chip
-              color="cyan-darken-3"
-              label
-              size="small"
-              class="me-2"
+      <v-row class="justify-center align-center">
+        <v-col cols="2" class="d-inline-flex rounded-lg	" style="background-color: #FFA726;">
+            <div class="text-h6">File Types: txt | csv | html | xml</div>
+        </v-col>
+        <v-col cols="10" class="d-inline-flex">
+          <v-file-input
+            @change="handleFileUpload"
+            color="cyan-darken-3"
+            counter
+            hide-details
+            label="File input"
+            placeholder="Select your file"
+            prepend-icon="mdi-paperclip"
+            variant="outlined"
+            accept=".csv"
           >
-            <span class="text-black">{{ fileName }}</span>
-          </v-chip>
-          </template>
-      </template>
-    </v-file-input>
-  </v-card-text>
+            <template v-slot:selection="{ fileNames }">
+                <template v-for="(fileName) in fileNames" :key="fileName">
+                <v-chip
+                    color="cyan-darken-3"
+                    label
+                    size="small"
+                    class="me-2"
+                >
+                  <span class="text-black text-h6">{{ fileName }}</span>
+                </v-chip>
+                </template>
+            </template>
+          </v-file-input>
+        </v-col>
+      </v-row>
+    </v-card-title>
   </v-card>
 </template>
 <script>
